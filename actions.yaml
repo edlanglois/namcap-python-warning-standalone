@@ -1,0 +1,13 @@
+name: Makepkg Build and Check
+author: Eric Langlois
+description: Build and check a PKGBUILD package
+outputs:
+  pkgfile0:
+    description: "Filename of the first generated package archive. Usually only one."
+  pkgfile1:
+    description: "Filename of the 2nd generated package archive, etc."
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.makepkgArgs }}
